@@ -93,8 +93,9 @@ module.exports = function RackspaceStore(options) {
 
       var file = {
         container: options.container,
-        remote: __newFile.fd,
+        remote: options.remote,
         contentType: mime.lookup(__newFile.fd),
+        headers:options.headers
       };
 
       var wr = new Transform({ objectMode:true });
